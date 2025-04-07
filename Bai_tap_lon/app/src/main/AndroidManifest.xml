@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Quyền cần thiết -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        tools:ignore="ScopedStorage" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-feature android:name="android.hardware.telephony" android:required="false" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Thue_tro"
+        tools:targetApi="31">
+
+        <!-- Main Activity (Launcher) -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:screenOrientation="sensor">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Đăng nhập -->
+        <activity
+            android:name=".Dangnhap"
+            android:exported="true"
+            android:screenOrientation="sensor" />
+
+        <!-- Đăng ký -->
+        <activity
+            android:name=".DangKi"
+            android:exported="false"
+            android:screenOrientation="sensor" />
+
+        <!-- Home Activity -->
+        <activity
+            android:name=".HomeActivity"
+            android:exported="false"
+            android:screenOrientation="sensor" />
+
+        <!-- Các Activity khác -->
+        <activity
+            android:name=".ChangePasswordActivity"
+            android:exported="false"
+            android:screenOrientation="sensor" />
+
+        <activity
+            android:name=".UpdateProfileActivity"
+            android:exported="false"
+            android:screenOrientation="sensor" />
+
+        <activity
+            android:name=".SearchResultActivity"
+            android:exported="false"
+            android:screenOrientation="sensor" />
+
+        <activity
+            android:name=".PostDetailActivity"
+            android:exported="false"
+            android:screenOrientation="sensor" />
+
+        <activity
+            android:name=".PostedPostsActivity"
+            android:exported="false"
+            android:screenOrientation="sensor" />
+
+        <activity
+            android:name=".PostedPostDetailActivity"
+            android:exported="false"
+            android:screenOrientation="sensor" />
+
+        <!-- Meta-data cho font -->
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+        <activity
+            android:name=".CreateAdminActivity" />
+
+    </application>
+
+</manifest>

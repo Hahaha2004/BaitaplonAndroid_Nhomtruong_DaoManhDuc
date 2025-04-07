@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="cities">
+        <item>Hà Nội</item>
+        <item>Hồ Chí Minh</item>
+    </string-array>
+    <string-array name="districts">
+        <item>Hà Đông</item>
+        <item>Thanh Xuân</item>
+        <item>Quận 1</item>
+        <item>Tân Phú</item>
+    </string-array>
+    <string-array name="room_types">
+        <item>Phòng trọ</item>
+        <item>Chung cư</item>
+        <item>Nhà nguyên căn</item>
+    </string-array>
+</resources>

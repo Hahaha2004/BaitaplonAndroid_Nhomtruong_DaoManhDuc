@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "409898000984",
+    "firebase_url": "https://baitaplon-f5860-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "baitaplon-f5860",
+    "storage_bucket": "baitaplon-f5860.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:409898000984:android:18fabcb2ea5b73af6f602d",
+        "android_client_info": {
+          "package_name": "com.example.thue_tro"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAstKXKQwj4DfF5mQbxNSyKE2kfaVmDY6c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
