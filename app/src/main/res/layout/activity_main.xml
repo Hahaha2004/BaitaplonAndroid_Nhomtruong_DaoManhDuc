@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/soft_login_background">
+
+    <!-- Logo app -->
+    <ImageView
+        android:id="@+id/logo_app"
+        android:layout_width="240dp"
+        android:layout_height="180dp"
+        android:src="@drawable/pngitem_392324"
+        android:scaleType="fitCenter"
+        android:background="@android:color/transparent"
+        android:alpha="0.9"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintBottom_toTopOf="@id/tvXinChao"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    android:layout_marginTop="40dp"
+    android:layout_marginBottom="30dp" />
+
+    <!-- TextView "Xin Chào !" -->
+    <TextView
+        android:id="@+id/tvXinChao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/sansita_swashed_light"
+        android:text="Xin Chào !"
+        android:textColor="#FFFFFF"
+    android:textSize="54sp"
+    android:shadowColor="#80000000"
+    android:shadowDx="2"
+    android:shadowDy="2"
+    android:shadowRadius="5"
+    app:layout_constraintTop_toBottomOf="@id/logo_app"
+    app:layout_constraintBottom_toTopOf="@id/tvThueTro"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    android:layout_marginBottom="15dp" />
+
+    <!-- TextView "Thuê Trọ 24/7" -->
+    <TextView
+        android:id="@+id/tvThueTro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/sansita_swashed_light"
+        android:text="Thuê Trọ Hà Nội 24/7"
+        android:textColor="#FFFFFF"
+        android:textSize="45sp"
+        android:shadowColor="#80000000"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:shadowRadius="5"
+        app:layout_constraintTop_toBottomOf="@id/tvXinChao"
+        app:layout_constraintBottom_toTopOf="@id/tvSlogan"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="20dp" />
+
+    <!-- TextView Slogan "Tìm Nhà Dễ Dàng - Ở Đâu Cũng Có!" -->
+    <TextView
+        android:id="@+id/tvSlogan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tìm Nhà Dễ Dàng - Ở Đâu Cũng Có!"
+        android:textColor="#000000"
+    android:textSize="20sp"
+    android:fontFamily="sans-serif-light"
+    android:alpha="0.8"
+    android:scaleX="1.05"
+    android:scaleY="1.05"
+    android:shadowColor="#40000000"
+    android:shadowDx="1"
+    android:shadowDy="1"
+    android:shadowRadius="3"
+    app:layout_constraintTop_toBottomOf="@id/tvThueTro"
+    app:layout_constraintBottom_toTopOf="@id/btn_bat_dau"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    android:layout_marginTop="10dp"
+    android:layout_marginBottom="40dp" />
+
+    <!-- Nút Bắt đầu -->
+    <Button
+        android:id="@+id/btn_bat_dau"
+        android:layout_width="320dp"
+        android:layout_height="80dp"
+        android:fontFamily="@font/sansita_swashed_light"
+        android:text="Bắt đầu"
+        android:textColor="@android:color/white"
+        android:backgroundTint="#039BE5"
+        android:stateListAnimator="@android:anim/fade_in"
+        android:textSize="40sp"
+        android:elevation="6dp"
+        android:alpha="0.95"
+        app:layout_constraintTop_toBottomOf="@id/tvSlogan"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="60dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
