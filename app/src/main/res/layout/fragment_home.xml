@@ -126,9 +126,8 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="50+ phòng trọ"
-                    android:textSize="12sp"
-                    android:textColor="#757575" />
+                    android:textColor="#757575"
+                    android:textSize="12sp" />
             </LinearLayout>
 
             <LinearLayout
@@ -157,9 +156,8 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="40+ phòng trọ"
-                    android:textSize="12sp"
-                    android:textColor="#757575" />
+                    android:textColor="#757575"
+                    android:textSize="12sp" />
             </LinearLayout>
 
             <LinearLayout
@@ -187,9 +185,8 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="30+ phòng trọ"
-                    android:textSize="12sp"
-                    android:textColor="#757575" />
+                    android:textColor="#757575"
+                    android:textSize="12sp" />
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
