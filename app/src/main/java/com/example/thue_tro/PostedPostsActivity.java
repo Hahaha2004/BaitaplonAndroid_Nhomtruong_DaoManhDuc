@@ -105,7 +105,7 @@ public class PostedPostsActivity extends AppCompatActivity {
                     String postId = snapshot.getKey();
                     PostFragment.Post post = snapshot.getValue(PostFragment.Post.class);
                     if (post != null) {
-                        // Admin thấy tất cả bài đăng, User chỉ thấy bài của mình dựa trên số điện thoại
+                        // Admin thấy tất cả bài đăng, User chỉ thấy bài của mình dựa trên username
                       if ("admin".equals(userRole) || (post.username != null && post.username.equals(currentUsername))) {
                             addPostToList(post, postId);
                         }
