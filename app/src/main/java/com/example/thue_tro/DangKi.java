@@ -228,9 +228,7 @@ public class DangKi extends AppCompatActivity { // Lớp DangKi kế thừa từ
         } else {
             tvLoiNguoiDung.setVisibility(View.GONE); // Ẩn lỗi nếu hợp lệ
         }
-
-        // Kiểm tra Tên đăng nhập
-        if (dangNhap.isEmpty()) {
+        if (dangNhap.isEmpty()) { // Kiểm tra Tên đăng nhập
             tvLoiDangNhap.setText("Vui lòng nhập tên đăng nhập"); // Lỗi nếu trống
             tvLoiDangNhap.setVisibility(View.VISIBLE);
             isValid = false;
@@ -323,6 +321,7 @@ public class DangKi extends AppCompatActivity { // Lớp DangKi kế thừa từ
                 User user = new User(nguoiDung, dangNhap, email, matKhau, soDienThoai, "user"); // Tạo đối tượng người dùng mới
                 String userId = usersReference.push().getKey(); // Tạo ID ngẫu nhiên cho người dùng
                 usersReference.child(userId).setValue(user) // Lưu người dùng vào Firebase
+                        // Nếu lưu dữ liệu thành công vào Firebase
                         .addOnSuccessListener(aVoid -> {
                             Log.d("DangKi", "Đăng ký thành công: " + dangNhap); // Ghi log khi thành công
                             if (!isFinishing() && !isDestroyed()) { // Kiểm tra Activity còn tồn tại
@@ -331,6 +330,7 @@ public class DangKi extends AppCompatActivity { // Lớp DangKi kế thừa từ
                                 startDangNhapActivity(); // Nếu Activity đã hủy, chuyển thẳng sang Dangnhap
                             }
                         })
+                        // Nếu đăng ký thất bại
                         .addOnFailureListener(e -> {
                             Log.e("DangKi", "Đăng ký thất bại: " + e.getMessage()); // Ghi log khi thất bại
                             if (!isFinishing() && !isDestroyed()) {

@@ -1,0 +1,206 @@
+{
+    "admins": {
+      "admin12345": {
+        "dangNhap": "admin12345",
+        "email": "admin12345@gmail.com",
+        "matKhau": "@Admin12345",
+        "nguoiDung": "ADMIN",
+        "role": "admin",
+        "soDienThoai": "0987654321"
+      }
+    },
+    "users": {
+      "-ONI3rgbYNB3TEJQJzPs": {
+        "dangNhap": "minhthuy",
+        "email": "minhthuy123@gmail.com",
+        "matKhau": "thuy@2004",
+        "nguoiDung": "MINH THUY",
+        "role": "user",
+        "soDienThoai": "0987456346"
+      },
+      "-ONIFnKxHALE6yYu60QX": {
+        "dangNhap": "daomanhduc123",
+        "email": "daoduc2k4@gmail.com",
+        "matKhau": "Daomanhduc123@",
+        "nguoiDung": "DAO MANH DUC",
+        "role": "user",
+        "soDienThoai": "0382089580"
+      },
+      "-ONIFy4kBELC5eGPsB_x": {
+        "dangNhap": "duck123",
+        "email": "vitcobavi@gmail.com",
+        "matKhau": "Duck123@",
+        "nguoiDung": "DUCK",
+        "role": "user",
+        "soDienThoai": "0235648751"
+      },
+      "-ONIPj1rqC7-G_MM5pPw": {
+        "dangNhap": "phamtiendat",
+        "email": "tiendatpham1504@gmail.com",
+        "matKhau": "@Tiendat1504",
+        "nguoiDung": "PHAM TIEN DAT",
+        "role": "user",
+        "soDienThoai": "0889740127"
+      },
+      "-ONKnye2Gaip274v4HBp": {
+        "dangNhap": "daoduc",
+        "email": "daoduc123@gmail.com",
+        "matKhau": "duc@2004",
+        "nguoiDung": "DAO MANH DUC",
+        "role": "user",
+        "soDienThoai": "0912345678"
+      },
+      "-ONV4deR2gD_gTyJ8q9_": {
+        "dangNhap": "thuy2004",
+        "email": "thuy@gmail.com",
+        "matKhau": "thuy@2004",
+        "nguoiDung": "MINH THUY",
+        "role": "user",
+        "soDienThoai": "0398765789"
+      },
+      "-ONV4deWSCXyR03rC5hl": {
+        "dangNhap": "thuy2004",
+        "email": "thuy@gmail.com",
+        "matKhau": "thuy@2004",
+        "nguoiDung": "MINH THUY",
+        "role": "user",
+        "soDienThoai": "0398765789"
+      },
+      "-ONV4deY8W3N4b26JvB1": {
+        "dangNhap": "thuy2004",
+        "email": "thuy@gmail.com",
+        "matKhau": "thuy@2004",
+        "nguoiDung": "MINH THUY",
+        "role": "user",
+        "soDienThoai": "0398765789"
+      },
+      "-ONV4de_oCbkcy_wNUQD": {
+        "dangNhap": "thuy2004",
+        "email": "thuy@gmail.com",
+        "matKhau": "thuy@2004",
+        "nguoiDung": "MINH THUY",
+        "role": "user",
+        "soDienThoai": "0398765789"
+      },
+      "-ONV4deaKm-AgT1BgB6Q": {
+        "dangNhap": "thuy2004",
+        "email": "thuy@gmail.com",
+        "matKhau": "thuy@2004",
+        "nguoiDung": "MINH THUY",
+        "role": "user",
+        "soDienThoai": "0398765789"
+      },
+      "-ONV4decWKeGU0tZ-beQ": {
+        "dangNhap": "thuy2004",
+        "email": "thuy@gmail.com",
+        "matKhau": "thuy@2004",
+        "nguoiDung": "MINH THUY",
+        "role": "user",
+        "soDienThoai": "0398765789"
+      },
+      "-ONV4dee27WwqWDvpYbF": {
+        "dangNhap": "thuy2004",
+        "email": "thuy@gmail.com",
+        "matKhau": "thuy@2004",
+        "nguoiDung": "MINH THUY",
+        "role": "user",
+        "soDienThoai": "0398765789"
+      },
+      "-ONV4defMKS55kZ0yVwk": {
+        "dangNhap": "thuy2004",
+        "email": "thuy@gmail.com",
+        "matKhau": "thuy@2004",
+        "nguoiDung": "MINH THUY",
+        "role": "user",
+        "soDienThoai": "0398765789"
+      },
+      "-ONV4degfe_BTkgWhAbt": {
+        "dangNhap": "thuy2004",
+        "email": "thuy@gmail.com",
+        "matKhau": "thuy@2004",
+        "nguoiDung": "MINH THUY",
+        "role": "user",
+        "soDienThoai": "0398765789"
+      },
+      "-ONV4dejxzWqXDLLX_KQ": {
+        "dangNhap": "thuy2004",
+        "email": "thuy@gmail.com",
+        "matKhau": "thuy@2004",
+        "nguoiDung": "MINH THUY",
+        "role": "user",
+        "soDienThoai": "0398765789"
+      },
+      "-ONV4delKPjeZG_c3N23": {
+        "dangNhap": "thuy2004",
+        "email": "thuy@gmail.com",
+        "matKhau": "thuy@2004",
+        "nguoiDung": "MINH THUY",
+        "role": "user",
+        "soDienThoai": "0398765789"
+      },
+      "-ONV4demvde3SPqIfmZH": {
+        "dangNhap": "thuy2004",
+        "email": "thuy@gmail.com",
+        "matKhau": "thuy@2004",
+        "nguoiDung": "MINH THUY",
+        "role": "user",
+        "soDienThoai": "0398765789"
+      },
+      "-ONV4deo81qU_sQwCM04": {
+        "dangNhap": "thuy2004",
+        "email": "thuy@gmail.com",
+        "matKhau": "thuy@2004",
+        "nguoiDung": "MINH THUY",
+        "role": "user",
+        "soDienThoai": "0398765789"
+      },
+      "-ONV4deq7hcy4Sc4gdzh": {
+        "dangNhap": "thuy2004",
+        "email": "thuy@gmail.com",
+        "matKhau": "thuy@2004",
+        "nguoiDung": "MINH THUY",
+        "role": "user",
+        "soDienThoai": "0398765789"
+      },
+      "-ONV4dercWLY-pVeuLKE": {
+        "dangNhap": "thuy2004",
+        "email": "thuy@gmail.com",
+        "matKhau": "thuy@2004",
+        "nguoiDung": "MINH THUY",
+        "role": "user",
+        "soDienThoai": "0398765789"
+      },
+      "-ONV4detIo_55j0enM2K": {
+        "dangNhap": "thuy2004",
+        "email": "thuy@gmail.com",
+        "matKhau": "thuy@2004",
+        "nguoiDung": "MINH THUY",
+        "role": "user",
+        "soDienThoai": "0398765789"
+      },
+      "-ONV4deuheoowRIpsjKA": {
+        "dangNhap": "thuy2004",
+        "email": "thuy@gmail.com",
+        "matKhau": "thuy@2004",
+        "nguoiDung": "MINH THUY",
+        "role": "user",
+        "soDienThoai": "0398765789"
+      },
+      "-ONV4dewvJprfQ1zcaVj": {
+        "dangNhap": "thuy2004",
+        "email": "thuy@gmail.com",
+        "matKhau": "thuy@2004",
+        "nguoiDung": "MINH THUY",
+        "role": "user",
+        "soDienThoai": "0398765789"
+      },
+      "-ONXjlEoeLzepC0LEEKl": {
+        "dangNhap": "thuy123",
+        "email": "thuy123@gmail.com",
+        "matKhau": "thuy@2004",
+        "nguoiDung": "NGUYEN THI MINH THUY",
+        "role": "user",
+        "soDienThoai": "0398789899"
+      }
+    }
+  }

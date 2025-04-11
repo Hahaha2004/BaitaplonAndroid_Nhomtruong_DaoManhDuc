@@ -27,7 +27,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/sansita_swashed_light"
-        android:text="Xin Chào !"
+        android:text="Xin Chào "
         android:textColor="#FFFFFF"
     android:textSize="54sp"
     android:shadowColor="#80000000"
