@@ -69,6 +69,7 @@ public class UpdateProfileActivity extends AppCompatActivity {
         btnSaveProfile.setOnClickListener(v -> validateAndUpdateProfile());
     }
 
+    //Show dialog nếu bị lỗi
     private void showErrorDialog(String message) {
         new AlertDialog.Builder(this)
                 .setTitle("Lỗi")
@@ -78,6 +79,7 @@ public class UpdateProfileActivity extends AppCompatActivity {
                 .show();
     }
 
+    //Show dialog thành công khi cập nhật hồ sơ thành công
     private void showSuccessDialog() {
         new AlertDialog.Builder(this)
                 .setTitle("Thành công")
@@ -88,6 +90,7 @@ public class UpdateProfileActivity extends AppCompatActivity {
                 .show();
     }
 
+    // Hàm này lấy thông tin người dùng từ Firebase và hiển thị lên các ô nhập.
     private void loadUserData(String username) {
         DatabaseReference targetReference = "admin".equals(userRole) ? adminsReference : usersReference;
 
@@ -118,6 +121,7 @@ public class UpdateProfileActivity extends AppCompatActivity {
                 });
     }
 
+    //Kiểm tra xem điều kiện nhập thông tin
     private void validateAndUpdateProfile() {
         String nguoiDung = edtNguoiDung.getText().toString().trim();
         String soDienThoai = edtSoDienThoai.getText().toString().trim();
@@ -167,7 +171,7 @@ public class UpdateProfileActivity extends AppCompatActivity {
         } else {
             tvErrorEmail.setVisibility(View.GONE);
         }
-
+        // Nếu thông tin nhập vào (tên, số điện thoại, email) hợp lệ.
         if (isValid) {
             checkExistingFields(soDienThoai, email, () -> {
                 DatabaseReference targetReference = "admin".equals(userRole) ? adminsReference : usersReference;
@@ -198,6 +202,7 @@ public class UpdateProfileActivity extends AppCompatActivity {
         }
     }
 
+    //Kiểm tra số điện thoại và email đã tạo tồn tại từ trước trong Firebase
     private void checkExistingFields(String soDienThoai, String email, Runnable onSuccess) {
         boolean[] checks = new boolean[2]; // 0: soDienThoai, 1: email
         checks[0] = checks[1] = true;
