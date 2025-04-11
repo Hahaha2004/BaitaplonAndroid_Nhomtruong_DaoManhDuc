@@ -236,7 +236,7 @@ public class UpdateProfileActivity extends AppCompatActivity {
             proceedIfAllChecksDone(checks, completedChecks, onSuccess);
         }));
     }
-
+    // Tìm kiếm trong Firebase dựa trên trường (field) và giá trị (value) cụ thể
     private void checkField(DatabaseReference reference, String field, String value, Runnable onExist, Runnable onNext) {
         reference.orderByChild(field).equalTo(value)
                 .addListenerForSingleValueEvent(new ValueEventListener() {
@@ -244,7 +244,7 @@ public class UpdateProfileActivity extends AppCompatActivity {
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         if (dataSnapshot.exists()) {
                             for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
-                                String username = snapshot.child("dangNhap").getValue(String.class);
+                                String username = snapshot.child("dangNhap").getValue(String.class);// Kiểm tra nếu tên đăng nhập tồn tại và không phải của người dùng hiện tại
                                 if (username != null && !username.equals(currentUsername)) {
                                     onExist.run();
                                     onNext.run();
@@ -270,4 +270,5 @@ public class UpdateProfileActivity extends AppCompatActivity {
             }
         }
     }
+
 }
