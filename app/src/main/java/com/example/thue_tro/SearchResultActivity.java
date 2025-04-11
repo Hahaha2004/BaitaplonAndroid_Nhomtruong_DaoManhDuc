@@ -113,7 +113,7 @@ public class SearchResultActivity extends AppCompatActivity {
             }
         });
 
-        // Sự kiện nút Sắp xếp
+        // Sự kiện nút Sắp xếp phòng
         btnSort.setOnClickListener(v -> {
             PopupMenu popup = new PopupMenu(SearchResultActivity.this, btnSort);
             popup.getMenu().add("Ngày đăng bài từ sớm nhất đến muộn nhất");
