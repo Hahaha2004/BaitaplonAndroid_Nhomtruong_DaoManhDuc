@@ -138,6 +138,7 @@ public class HomeFragment extends Fragment {
         return Base64.encodeToString(byteArray, Base64.DEFAULT);
     }
 
+    //lấy ảnh từ thư viện máy ảo
     private void openImagePicker(int requestCode) {
         currentImageSelection = requestCode;
         Intent intent = new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
