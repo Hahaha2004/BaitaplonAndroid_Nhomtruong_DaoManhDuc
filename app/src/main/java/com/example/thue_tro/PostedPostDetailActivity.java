@@ -284,6 +284,7 @@ public class PostedPostDetailActivity extends AppCompatActivity {
                 });
     }
 
+    //xóa bài viết
     private void deletePost() {
         if (postId != null) {
             databaseReference.child(postId).removeValue()
