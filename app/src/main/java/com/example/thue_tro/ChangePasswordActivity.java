@@ -25,6 +25,7 @@ public class ChangePasswordActivity extends AppCompatActivity {
     private Button btnSavePassword;
     private TextView tvQuayLai;
     private DatabaseReference databaseReference;
+    private DatabaseReference adminsReference;
     private String currentUsername;
     private boolean isOldPasswordVisible = false;
     private boolean isNewPasswordVisible = false;
@@ -48,6 +49,8 @@ public class ChangePasswordActivity extends AppCompatActivity {
         // Khởi tạo Firebase
         databaseReference = FirebaseDatabase.getInstance("https://baitaplon-f5860-default-rtdb.asia-southeast1.firebasedatabase.app")
                 .getReference("users");
+        DatabaseReference adminsReference = FirebaseDatabase.getInstance("https://baitaplon-f5860-default-rtdb.asia-southeast1.firebasedatabase.app")
+                .getReference("admins");
 
         // Lấy username từ Intent
         currentUsername = getIntent().getStringExtra("username");

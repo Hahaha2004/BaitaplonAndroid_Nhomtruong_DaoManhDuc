@@ -147,7 +147,6 @@ public class AccountFragment extends Fragment {
     private void deleteAccount() {
         if (currentUsername != null) {
             DatabaseReference targetReference = "admin".equals(userRole) ? adminsReference : usersReference;
-
             targetReference.orderByChild("dangNhap").equalTo(currentUsername)
                     .addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
