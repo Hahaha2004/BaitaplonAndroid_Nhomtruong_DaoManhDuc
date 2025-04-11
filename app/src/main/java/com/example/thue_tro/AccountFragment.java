@@ -65,7 +65,7 @@ public class AccountFragment extends Fragment {
             Toast.makeText(getContext(), "Không tìm thấy thông tin người dùng", Toast.LENGTH_SHORT).show();
         }
 
-        // Điều chỉnh giao diện cho admin
+        // Điều chỉnh giao diện cho admin(user ko có quyển)
         if ("admin".equals(userRole)) {
             tvViewPostedPosts.setText("Xem tất cả bài đăng");
         } else {
