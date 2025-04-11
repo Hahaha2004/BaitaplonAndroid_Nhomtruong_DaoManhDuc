@@ -24,9 +24,10 @@ public class ChangePasswordActivity extends AppCompatActivity {
     private TextView tvErrorOldPassword, tvErrorNewPassword, tvErrorConfirmNewPassword;
     private Button btnSavePassword;
     private TextView tvQuayLai;
-    private DatabaseReference databaseReference;
+    private DatabaseReference usersReference;
     private DatabaseReference adminsReference;
     private String currentUsername;
+    private String userRole; // Thêm biến để lưu vai trò
     private boolean isOldPasswordVisible = false;
     private boolean isNewPasswordVisible = false;
     private boolean isConfirmPasswordVisible = false;
@@ -47,15 +48,16 @@ public class ChangePasswordActivity extends AppCompatActivity {
         tvQuayLai = findViewById(R.id.tvQuayLai);
 
         // Khởi tạo Firebase
-        databaseReference = FirebaseDatabase.getInstance("https://baitaplon-f5860-default-rtdb.asia-southeast1.firebasedatabase.app")
+        usersReference = FirebaseDatabase.getInstance("https://baitaplon-f5860-default-rtdb.asia-southeast1.firebasedatabase.app")
                 .getReference("users");
-        DatabaseReference adminsReference = FirebaseDatabase.getInstance("https://baitaplon-f5860-default-rtdb.asia-southeast1.firebasedatabase.app")
+        adminsReference = FirebaseDatabase.getInstance("https://baitaplon-f5860-default-rtdb.asia-southeast1.firebasedatabase.app")
                 .getReference("admins");
 
-        // Lấy username từ Intent
+        // Lấy username và role từ Intent
         currentUsername = getIntent().getStringExtra("username");
+        userRole = getIntent().getStringExtra("role"); // Lấy role từ Intent
 
-        if (currentUsername == null) {
+        if (currentUsername == null || userRole == null) {
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
             builder.setTitle("Lỗi")
                     .setMessage("Không tìm thấy thông tin người dùng!")
@@ -175,8 +177,11 @@ public class ChangePasswordActivity extends AppCompatActivity {
     }
 
     private void changePassword(String oldPassword, String newPassword) {
+        // Chọn node phù hợp dựa trên userRole
+        DatabaseReference targetReference = "admin".equals(userRole) ? adminsReference : usersReference;
+
         // Kiểm tra mật khẩu cũ và cập nhật mật khẩu mới
-        databaseReference.orderByChild("dangNhap").equalTo(currentUsername)
+        targetReference.orderByChild("dangNhap").equalTo(currentUsername)
                 .addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
