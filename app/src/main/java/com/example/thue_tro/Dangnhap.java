@@ -84,7 +84,7 @@ public class Dangnhap extends AppCompatActivity { // Lớp Dangnhap kế thừa 
         checkCallPhonePermission();
     }
 
-    // Kiểm tra và yêu cầu quyền gọi điện
+    // Yêu cầu quyền gọi điện
     private void checkCallPhonePermission() {
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) { // Kiểm tra xem quyền gọi điện đã được cấp chưa
             ActivityCompat.requestPermissions(this,
