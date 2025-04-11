@@ -46,8 +46,7 @@ public class PostFragment extends Fragment {
     private static final int PICK_IMAGE_REQUEST = 1;
     private Uri imageUri1, imageUri2, imageUri3;
     private int currentImageSelection = 0;
-    private String postId;
-    private boolean isEditMode = false;
+
     private String currentUsername;
     private String selectedDistrict, selectedRoomType;
 
@@ -116,24 +115,9 @@ public class PostFragment extends Fragment {
         imgPhoto2.setOnClickListener(v -> openImagePicker(2));
         imgPhoto3.setOnClickListener(v -> openImagePicker(3));
 
-        // Kiểm tra chế độ chỉnh sửa
-        if (bundle != null && bundle.getBoolean("isEditMode", false)) {
-            isEditMode = true;
-            postId = bundle.getString("postId");
-            Post post = (Post) bundle.getSerializable("post");
-            if (post != null) {
-                btnPost.setText("Cập nhật");
-                loadPostData(post);
-            }
-        }
-
-        // Xử lý nút đăng bài hoặc cập nhật
+        // Xử lý nút đăng bài
         btnPost.setOnClickListener(v -> {
-            if (isEditMode) {
-                updatePost();
-            } else {
-                uploadPost();
-            }
+            uploadPost();
         });
 
         return view;
@@ -152,7 +136,7 @@ public class PostFragment extends Fragment {
         if (getActivity() == null) return;
         new AlertDialog.Builder(getActivity())
                 .setTitle("Thành công")
-                .setMessage(message)
+                .setMessage("Đăng bài thành công")
                 .setIcon(R.drawable.ic_check_green) // Đảm bảo sử dụng tích xanh
                 .setPositiveButton("OK", (dialog, which) -> {
                     dialog.dismiss();
@@ -303,36 +287,6 @@ public class PostFragment extends Fragment {
         }
     }
 
-    private void loadPostData(Post post) {
-        if (post != null) {
-            edtFullName.setText(post.fullName);
-            edtPhone.setText(post.phone);
-            edtPostDate.setText(post.postDate);
-            edtAddress.setText(post.address);
-            edtPrice.setText(formatNumber(post.price));
-            edtElectricity.setText(formatNumber(post.electricity));
-            edtWater.setText(formatNumber(post.water));
-            edtService.setText(formatNumber(post.service));
-            edtWifi.setText(formatNumber(post.wifi));
-
-            setSpinnerValue(spinnerDistrict, post.district);
-            setSpinnerValue(spinnerRoomType, post.roomType);
-
-            if (post.photo1Uri != null && !post.photo1Uri.isEmpty()) {
-                Bitmap bitmap1 = decodeBase64ToBitmap(post.photo1Uri);
-                if (bitmap1 != null) imgPhoto1.setImageBitmap(bitmap1);
-            }
-            if (post.photo2Uri != null && !post.photo2Uri.isEmpty()) {
-                Bitmap bitmap2 = decodeBase64ToBitmap(post.photo2Uri);
-                if (bitmap2 != null) imgPhoto2.setImageBitmap(bitmap2);
-            }
-            if (post.photo3Uri != null && !post.photo3Uri.isEmpty()) {
-                Bitmap bitmap3 = decodeBase64ToBitmap(post.photo3Uri);
-                if (bitmap3 != null) imgPhoto3.setImageBitmap(bitmap3);
-            }
-        }
-    }
-
     private String formatNumber(String value) {
         if (value == null || value.isEmpty()) return "";
         try {
@@ -434,88 +388,6 @@ public class PostFragment extends Fragment {
             }
         }
     }
-
-    private void updatePost() {
-        String fullName = edtFullName.getText().toString().trim();
-        String phone = edtPhone.getText().toString().trim();
-        String postDate = edtPostDate.getText().toString().trim();
-        String city = "Hà Nội";
-        String address = edtAddress.getText().toString().trim();
-        String price = edtPrice.getText().toString().trim().replaceAll("[^0-9]", "");
-        String electricity = edtElectricity.getText().toString().trim().replaceAll("[^0-9]", "");
-        String water = edtWater.getText().toString().trim().replaceAll("[^0-9]", "");
-        String service = edtService.getText().toString().trim().replaceAll("[^0-9]", "");
-        String wifi = edtWifi.getText().toString().trim().replaceAll("[^0-9]", "");
-
-        // Kiểm tra các trường bắt buộc
-        boolean isValid = true;
-
-        if (fullName.isEmpty()) {
-            tvFullNameError.setVisibility(View.VISIBLE);
-            isValid = false;
-        } else {
-            tvFullNameError.setVisibility(View.GONE);
-        }
-
-        if (phone.isEmpty()) {
-            tvPhoneError.setVisibility(View.VISIBLE);
-            isValid = false;
-        } else {
-            tvPhoneError.setVisibility(View.GONE);
-        }
-
-        if (postDate.isEmpty()) {
-            tvPostDateError.setVisibility(View.VISIBLE);
-            isValid = false;
-        } else {
-            tvPostDateError.setVisibility(View.GONE);
-        }
-
-        if (selectedDistrict == null) {
-            tvDistrictError.setVisibility(View.VISIBLE);
-            isValid = false;
-        } else {
-            tvDistrictError.setVisibility(View.GONE);
-        }
-
-        if (address.isEmpty()) {
-            tvAddressError.setVisibility(View.VISIBLE);
-            isValid = false;
-        } else {
-            tvAddressError.setVisibility(View.GONE);
-        }
-
-        if (selectedRoomType == null) {
-            tvRoomTypeError.setVisibility(View.VISIBLE);
-            isValid = false;
-        } else {
-            tvRoomTypeError.setVisibility(View.GONE);
-        }
-
-        if (price.isEmpty()) {
-            tvPriceError.setVisibility(View.VISIBLE);
-            isValid = false;
-        } else {
-            tvPriceError.setVisibility(View.GONE);
-        }
-
-        // Nếu tất cả trường bắt buộc đã được điền, tiến hành cập nhật bài
-        if (isValid) {
-            String photo1Base64 = imageUri1 != null ? convertImageToBase64(imageUri1) : "";
-            String photo2Base64 = imageUri2 != null ? convertImageToBase64(imageUri2) : "";
-            String photo3Base64 = imageUri3 != null ? convertImageToBase64(imageUri3) : "";
-
-            Post post = new Post(currentUsername, fullName, phone, city, selectedDistrict, address, selectedRoomType, price,
-                    electricity, water, service, wifi, photo1Base64, photo2Base64, photo3Base64, postDate);
-
-            if (postId != null) {
-                databaseReference.child(postId).setValue(post)
-                        .addOnSuccessListener(aVoid -> showSuccessDialog("Cập nhật bài đăng thành công"))
-                        .addOnFailureListener(e -> showErrorDialog("Cập nhật thất bại: " + e.getMessage()));
-            }
-        }
-    }
-
     private String convertImageToBase64(Uri uri) {
         if (getActivity() == null) return "";
         try {
