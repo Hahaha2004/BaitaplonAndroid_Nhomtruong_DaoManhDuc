@@ -275,7 +275,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Giá thuê (triệu/tháng)"
+                android:text="Giá thuê (đ/tháng)"
                 android:textSize="16sp"
                 android:textStyle="bold"
                 android:textColor="#2196F3"
@@ -313,7 +313,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Tiền điện (nghìn/kWh)"
+                android:text="Tiền điện (đ/kWh)"
                 android:textSize="16sp"
                 android:textStyle="bold"
                 android:textColor="#2196F3"
@@ -341,7 +341,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Tiền nước (nghìn/m³)"
+                android:text="Tiền nước (đ/m³)"
                 android:textSize="16sp"
                 android:textStyle="bold"
                 android:textColor="#2196F3"
@@ -369,7 +369,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Tiền dịch vụ (nghìn/tháng)"
+                android:text="Tiền dịch vụ (đ/tháng)"
                 android:textSize="16sp"
                 android:textStyle="bold"
                 android:textColor="#2196F3"
@@ -397,7 +397,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Tiền wifi (nghìn/tháng)"
+                android:text="Tiền wifi (đ/tháng)"
                 android:textSize="16sp"
                 android:textStyle="bold"
                 android:textColor="#2196F3"
