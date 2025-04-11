@@ -176,6 +176,7 @@ public class HomeFragment extends Fragment {
         }
     }
 
+    //Lưu ảnh lên firebase
     private void uploadImageToFirebase(android.net.Uri imageUri, String bannerKey) {
         try {
             // Chuyển đổi hình ảnh từ Uri thành Bitmap
