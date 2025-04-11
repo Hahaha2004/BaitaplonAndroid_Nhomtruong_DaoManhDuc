@@ -197,10 +197,15 @@ public class PostedPostDetailActivity extends AppCompatActivity {
             viewPagerPhotos.setAdapter(photoAdapter);
 
             // Kiểm tra quyền xóa
-            if ("admin".equals(userRole) || (post.phone != null && post.phone.equals(userPhone))) {
+            if (post.username != null && post.username.equals(currentUsername)) {
                 btnDelete.setVisibility(View.VISIBLE);
                 btnDelete.setOnClickListener(v -> showConfirmDeleteDialog()); // Hiển thị dialog xác nhận khi nhấn nút xóa
-            } else {
+            } else if ("admin".equals(userRole)) {
+                // Nếu là admin, họ cũng có quyền xóa
+                btnDelete.setVisibility(View.VISIBLE);
+                btnDelete.setOnClickListener(v -> showConfirmDeleteDialog());
+            }
+            else {
                 btnDelete.setVisibility(View.GONE);
             }
         } else {
