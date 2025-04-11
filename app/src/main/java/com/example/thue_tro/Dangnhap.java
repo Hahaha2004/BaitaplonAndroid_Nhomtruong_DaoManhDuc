@@ -27,9 +27,9 @@ import com.google.firebase.database.ValueEventListener; // Thư viện Firebase 
 public class Dangnhap extends AppCompatActivity { // Lớp Dangnhap kế thừa từ AppCompatActivity, là màn hình đăng nhập
 
     // Khai báo các thành phần giao diện và biến
-    private EditText edtUsername, edtPassword; // Ô nhập liệu cho tên đăng nhập và mật khẩu
+    private EditText edtUsername, edtPassword;
     private TextView tvUsernameError, tvPasswordError, tvRegister; // Văn bản hiển thị lỗi và nút đăng ký
-    private Button btnLogin; // Nút đăng nhập
+    private Button btnLogin;
     private DatabaseReference databaseReference; // Tham chiếu đến node "users" trong Firebase
     private DatabaseReference adminReference; // Tham chiếu đến node "admins" trong Firebase
     private boolean isPasswordVisible = false; // Biến kiểm soát trạng thái ẩn/hiện mật khẩu
